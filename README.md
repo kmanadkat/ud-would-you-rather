@@ -6,6 +6,8 @@ In the "Would You Rather?" Project, we'll build a web app that lets a user play 
 
 In our app, users will be able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
 
+<img src="./images/01-login.png" />
+
 ### 🕹 Project Features
 
 1. Login User
@@ -39,3 +41,20 @@ You should have `npm` and `node` installed in your machine, to confirm type `nod
 2. Open Terminal in project folder (containing `package.json` file)
 3. Run `npm install` and wait for all dependencies to download
 4. Finally run `npm start` this will automatically launch application in default browser at `http://localhost:3000`
+
+
+### 🎬 Project Snapshots
+
+<img src="./images/02-home.png" />
+
+<img src="./images/03-home.png" />
+
+<img src="./images/04-create.png" />
+
+<img src="./images/05-answer.png" />
+
+<img src="./images/06-leaderboard.png" />
+
+<img src="./images/07-register.png" />
+
+
