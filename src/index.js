@@ -8,6 +8,7 @@ import App from './components/App';
 import rootReducer from './reducers';
 import middlewares from './middlewares';
 
+// Integrating Redux Chrome Developer Tools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer,composeEnhancers( middlewares));
 

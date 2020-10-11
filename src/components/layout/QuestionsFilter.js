@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import QuestionCard from './QuestionCard';
 
 function QuestionsFilter(props) {
@@ -21,11 +22,13 @@ function QuestionsFilter(props) {
       </div>
       <div className="tab-content w-100" id="pills-tabContent">
         <div className="tab-pane w-100 fade show active" id="pills-unanswered" role="tabpanel">
+          {unanswered.length === 0 && <p className="text-center">Yeah! You answered all of them! Create <Link to="/add">new poll</Link> ?</p>}
           {unanswered.map(q => (
             <QuestionCard key={q} questionId={q} type="unanswered" />
-          ))}
+            ))}
         </div>
         <div className="tab-pane w-100 fade" id="pills-answered" role="tabpanel">
+          {answered.length === 0 && <p>Oops! You have not answered to any polls yet!</p>}
           {answered.map(q => (
             <QuestionCard key={q} questionId={q} type="answered" />
           ))}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class QuestionCard extends Component {
 
@@ -7,8 +8,8 @@ class QuestionCard extends Component {
     const {questionId, question, username, answerOption} = this.props;
     const votes1 = question.optionOne.votes.length;
     const votes2 = question.optionTwo.votes.length;
-    const freq1 = Math.floor((votes1 * 100)/(votes1 + votes2));
-    const freq2 = Math.floor((votes2 * 100)/(votes1 + votes2));
+    const freq1 = votes1 + votes2 === 0 ? 0 : Math.floor((votes1 * 100)/(votes1 + votes2));
+    const freq2 = votes1 + votes2 === 0 ? 0 : Math.floor((votes2 * 100)/(votes1 + votes2));
 
     return (
       <div className="card w-75 mx-auto mt-3">
@@ -42,7 +43,7 @@ class QuestionCard extends Component {
                 <span className="pl-4 lead font-weight-bold">{votes2}</span>
               </div>
             </div>
-            {!answerOption && <a href={`/question/${questionId}`}>Answer Poll</a>}
+            {!answerOption && <Link to={`/questions/${questionId}`}>Answer Poll</Link>}
           </div>
         </div>
       </div>

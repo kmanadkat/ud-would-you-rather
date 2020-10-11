@@ -23,7 +23,7 @@ body {
 }
 
 /* HIDE RADIO */
-[type=radio] { 
+#chooseAvatar [type=radio] { 
   position: absolute;
   opacity: 0;
   width: 0;
@@ -31,13 +31,13 @@ body {
 }
 
 /* IMAGE STYLES */
-[type=radio] + img {
+#chooseAvatar [type=radio] + img {
   cursor: pointer;
   border: 3px dashed transparent;
   transition: border 0.35s ease-in-out;
 }
 
 /* CHECKED STYLES */
-[type=radio]:checked + img {
+#chooseAvatar [type=radio]:checked + img {
   border: 3px dashed #0B6EFD;
 }

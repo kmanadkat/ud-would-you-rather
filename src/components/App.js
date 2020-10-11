@@ -24,7 +24,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/add" component={NewPoll} />
-          <Route path="/question/:question_id" component={PollDetail} />
+          <Route path="/questions/:question_id" component={PollDetail} />
           <Route path="/leaderboard" component={Leaderboard} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />

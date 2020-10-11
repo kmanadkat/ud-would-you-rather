@@ -15,7 +15,6 @@ class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state)
     const {users, dispatch, history} = this.props;
     const userFound = users.filter(user => user === this.state.username);
     if(userFound.length === 0){
@@ -23,7 +22,7 @@ class Login extends Component {
     }
     else if(userFound.length === 1){
       dispatch(setAuthedUser(this.state.username));
-      return history.push("/")
+      return history.push(this.props.location.state === undefined ? '/' : this.props.location.state.redirect);
     }
   }
 

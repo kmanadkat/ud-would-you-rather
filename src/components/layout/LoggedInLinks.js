@@ -1,12 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import { logoutAuthedUser } from '../../actions/authedUser'
 
 class LoggedInLinks extends React.Component{
+  state = {
+    redirect: false
+  }
 
   handleLogout = () => {
     this.props.dispatch(logoutAuthedUser());
+    this.props.history.push("/");
   }
 
   render() {
@@ -21,4 +25,4 @@ class LoggedInLinks extends React.Component{
   }
 }
 
-export default connect()(LoggedInLinks)
+export default withRouter(connect()(LoggedInLinks))

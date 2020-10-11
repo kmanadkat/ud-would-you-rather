@@ -135,6 +135,34 @@ export function _getQuestions () {
   })
 }
 
+function formatUser ({name, avatarURL}) {
+  return {
+    id: generateUID(),
+    name,
+    avatarURL,
+    answers: {},
+    questions: []
+  }
+}
+
+export function _saveNewUser (user) {
+  return new Promise((res, rej) => {
+    const formattedUser = formatUser(user)
+    setTimeout(() => {
+      questions = {
+        ...questions
+      }
+
+      users = {
+        ...users,
+        [formattedUser.id] : formattedUser
+      }
+
+      res(formattedUser)
+    }, 1000)
+  })
+}
+
 function formatQuestion ({ optionOneText, optionTwoText, author }) {
   return {
     id: generateUID(),

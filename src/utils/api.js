@@ -1,4 +1,4 @@
-import { _getQuestions, _getUsers } from "./_DATA";
+import { _getQuestions, _getUsers, _saveNewUser, _saveQuestion, _saveQuestionAnswer } from "./_DATA";
 
 // For Logging In
 export function getUsers() {
@@ -19,4 +19,19 @@ export function getInitialData() {
     users,
     questions,
   }))
+}
+
+// Create New Question
+export function saveQuestion(question) {
+  return _saveQuestion(question);
+}
+
+// Save Answer from user
+export function saveAnswer(answer){
+  return _saveQuestionAnswer(answer);
+}
+
+// Register New User
+export function saveNewUser(user) {
+  return _saveNewUser(user);
 }

@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
+import { setAuthedUser } from '../../actions/authedUser'
+import { handleCreateUser } from '../../actions/users'
 import Avatar1 from '../../imgs/1.png'
 import Avatar2 from '../../imgs/2.png'
 import Avatar3 from '../../imgs/3.png'
-import Avatar4 from '../../imgs/4.png'
 import Alert from './Alert'
 
 class RegisterForm extends Component {
   state = {
-    profile: {username: '', name: '', avatar: ''},
+    profile: {name: '', avatarURL: ''},
     availableAvatars: [],
-    alert: {status: 'invisible', message: 'alert', type: 'danger'}
+    alert: {status: 'invisible', message: 'alert', type: 'danger'},
+    redirect: false
   }
 
   componentDidMount(){
-    const allAvatars = [Avatar1, Avatar2, Avatar3, Avatar4]
+    const allAvatars = [Avatar1, Avatar2, Avatar3]
     this.setState({availableAvatars: allAvatars})
   }
 
@@ -39,17 +43,23 @@ class RegisterForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if(this.state.profile.avatar === ''){
+    if(this.state.profile.avatarURL === ''){
       this.showAlert("Please choose avatart first!")
     }else{
-      console.log(this.state)
-      // TODO : Dispatch Auth User
+      this.props.dispatch(handleCreateUser(this.state.profile))
+      .then(res => {
+        this.props.dispatch(setAuthedUser(res.user.id));
+        this.setState({profile: {name: '', avatarURL: ''}, redirect: true});
+      })
     }
   }
-  render() {
-    const {username, name} = this.state.profile;
-    const {status, type, message} = this.state.alert;
 
+  render() {
+    const {name} = this.state.profile;
+    const {status, type, message} = this.state.alert;
+    if(this.state.redirect === true){
+      return <Redirect to="/" />
+    }
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Join Would You Rather !!</h2>
@@ -57,17 +67,6 @@ class RegisterForm extends Component {
           Just fill your details &amp; let us help you in creating polls easily! Don't forget to help your friends too.
         </p>
         <Alert status={status} type={type} message={message} />
-        <div className="my-4">
-          <label htmlFor="username" className="form-label text-secondary">Username</label>
-          <input 
-            type="text"
-            className="form-control mt-1 w-75 text-dark" 
-            id="username" 
-            placeholder="Enter unique username"
-            onChange={this.handleChange}
-            value={username}
-            required />
-        </div>
         <div className="mb-4">
           <label htmlFor="name" className="form-label text-secondary">Full Name</label>
           <input 
@@ -79,11 +78,11 @@ class RegisterForm extends Component {
             value={name}
             required />
         </div>
-        <div className="mb-4">
+        <div className="mb-4" id="chooseAvatar">
           <span className="form-label d-block mb-3">Choose Avatar</span>
           {this.state.availableAvatars.map((avatar, index) => (
             <label key={index}>
-              <input type="radio" id="avatar" name="avatar" onChange={this.handleChange} value={avatar} />
+              <input type="radio" id="avatarURL" name="avatar" onChange={this.handleChange} value={avatar} />
               <img className="rounded mr-4 p-1" width="68" src={avatar} alt={`avatar${index}`} />
             </label>
           ))}
@@ -94,4 +93,4 @@ class RegisterForm extends Component {
   }
 }
 
-export default RegisterForm
+export default connect()(RegisterForm)
