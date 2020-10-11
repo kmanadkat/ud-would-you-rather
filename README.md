@@ -1,12 +1,12 @@
 ## ![Logo](./public/favicon-32x32.png) Would You Rather - React Nanodegree Second Project
 
-#### 📜 Project Overview
+### 📜 Project Overview
 
 In the "Would You Rather?" Project, we'll build a web app that lets a user play the “Would You Rather?” game. The game goes like this: A user is asked a question in the form: “Would you rather [option A] or [option B] ?”. Answering "neither" or "both" is against the rules.
 
 In your app, users will be able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
 
-#### 🕹 Project Features
+### 🕹 Project Features
 
 1. Login User
 2. Register New User
@@ -16,7 +16,7 @@ In your app, users will be able to answer questions, see which questions they ha
 6. Route Protection
 7. Route Redirecting
 
-#### ⛳️ Routes
+### ⛳️ Routes
 
 **Route Gaurding** or **Route Protection** is in place for all routes, following is the route visibility:
 
