@@ -45,6 +45,8 @@ You should have `npm` and `node` installed in your machine, to confirm type `nod
 
 ### 🎬 Project Snapshots
 
+<img src="./images/07-register.png" />
+
 <img src="./images/02-home.png" />
 
 <img src="./images/03-home.png" />
@@ -54,7 +56,4 @@ You should have `npm` and `node` installed in your machine, to confirm type `nod
 <img src="./images/05-answer.png" />
 
 <img src="./images/06-leaderboard.png" />
-
-<img src="./images/07-register.png" />
-
 
