@@ -10,7 +10,7 @@ In our app, users will be able to answer questions, see which questions they hav
 
 1. Login User
 2. Register New User
-3. View Answered & Unasnswered Poll
+3. View Answered & Unanswered Poll
 4. Participate in Poll Voting 
 5. View Rank in Leaderboard
 6. Route Protection
