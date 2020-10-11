@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ![Logo](./public/favicon-32x32.png) Would You Rather - React & Redux Nanodegree Second Project
 
-## Available Scripts
+### 📜 Project Overview
 
-In the project directory, you can run:
+In the "Would You Rather?" Project, we'll build a web app that lets a user play the “Would You Rather?” game. The game goes like this: A user is asked a question in the form: “Would you rather [option A] or [option B] ?”. Answering "neither" or "both" is against the rules.
 
-### `npm start`
+In our app, users will be able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 🕹 Project Features
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+1. Login User
+2. Register New User
+3. View Answered & Unanswered Poll
+4. Participate in Poll Voting 
+5. View Rank in Leaderboard
+6. Route Protection
+7. Route Redirecting
 
-### `npm test`
+### ⛳️ Routes
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Route Gaurding** or **Route Protection** is in place for all routes, following is the route visibility:
 
-### `npm run build`
+| Normal User                | Authenticated User                     |
+|----------------------------|----------------------------------------|
+| `/login` Login Route       | `/` Dashboard Route                    |
+| `/register` Register Route | `/add` Create New Poll                 |
+| `*` 404 Not Found          | `/leaderboard` Leaderboard             |
+|                            | `/questions/:question_id` Poll Details |
+|                            | `*` 404 Not Found                      |
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Route Redirecting** is in place. For example if user tries to visit `/leaderboard` directly from address bar without logging in then he/she will asked to login first and then redirected to initially requested route (`/leaderboard`)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ⚙️ Installation & Setup
 
-### `npm run eject`
+You should have `npm` and `node` installed in your machine, to confirm type `node --version` in terminal. Below are steps to setup project in your system :
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Clone the `master` branch of this repository
+2. Open Terminal in project folder (containing `package.json` file)
+3. Run `npm install` and wait for all dependencies to download
+4. Finally run `npm start` this will automatically launch application in default browser at `http://localhost:3000`
