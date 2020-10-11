@@ -57,3 +57,4 @@ You should have `npm` and `node` installed in your machine, to confirm type `nod
 
 <img src="./images/06-leaderboard.png" />
 
+<img src="./images/08-404.png" />
