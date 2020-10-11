@@ -1,0 +1,43 @@
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+}
+
+.brand-font {
+  font-family: 'Concert One', cursive;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #9a9fa5;
+  outline: 0;
+  box-shadow: 0 0 0 0.15rem rgba(48, 49, 49, 0.15);
+}
+
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+  border: 3px dashed transparent;
+  transition: border 0.35s ease-in-out;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  border: 3px dashed #0B6EFD;
+}
