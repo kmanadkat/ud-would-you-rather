@@ -1,4 +1,4 @@
-## ![Logo](./public/favicon-32x32.png) Would You Rather - React Nanodegree Second Project
+## ![Logo](./public/favicon-32x32.png) Would You Rather - React & Redux Nanodegree Second Project
 
 ### 📜 Project Overview
 
