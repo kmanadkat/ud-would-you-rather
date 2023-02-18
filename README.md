@@ -1,6 +1,6 @@
 ## ![Logo](./public/favicon-32x32.png) Would You Rather - React & Redux Nanodegree Second Project
 
-[Live Code Sandbox Demo](https://jxspo.csb.app/login)
+[Live Code Sandbox Demo](https://codesandbox.io/s/would-you-rather-krupesh-react-nd-g5rdx)
 
 ### 📜 Project Overview
 
